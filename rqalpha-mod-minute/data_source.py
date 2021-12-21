@@ -137,7 +137,8 @@ class MinuteDataSource(BaseDataSource):
         start_dt_loc = self.get_trading_calendar().get_loc(
             dt.replace(hour=0, minute=0, second=0,
                        microsecond=0)) - (bar_count / 240) - 1
-        start_dt = self.get_trading_calendar()[start_dt_loc]
+        start_dt = self.get_trading_calendar()[start_dt_loc].replace(
+            hour=9, minute=31, second=0, microsecond=0)
 
         bar_data = self.get_minute_k_data(instrument, start_dt,
                                           dt).tail(bar_count)
