@@ -1,6 +1,6 @@
 six
 numpy
 dateutils
-rqalpha>=2.3.0
+rqalpha>=2.2.0
 rqdatac
 pandas
